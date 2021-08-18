@@ -1,11 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<constraintlayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/northwest"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@id/southeast"
+        app:layout_constraintEnd_toStartOf="@id/northeast"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_building1" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</constraintlayout>
+    <ImageView
+        android:id="@+id/northeast"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/northwest"
+        app:layout_constraintBottom_toTopOf="@id/southeast"
+        app:srcCompat="@drawable/ic_building1" />
+
+    <ImageView
+        android:id="@+id/southeast"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/northeast"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/southwest"
+        app:srcCompat="@drawable/ic_building1" />
+
+    <ImageView
+        android:id="@+id/southwest"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toStartOf="@id/southeast"
+        app:layout_constraintTop_toBottomOf="@id/northeast"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_building1" />
+</androidx.constraintlayout.widget.ConstraintLayout>
