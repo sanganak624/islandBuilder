@@ -19,15 +19,19 @@ public class MapAdapter extends RecyclerView.Adapter<MapDataHolder> {
     @NonNull
     @Override
     public MapDataHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.grid4x4,parent,false);
-        MapDataHolder mapDataHolder = new MapDataHolder(view);
 
         RecyclerView itemView = parent.findViewById(R.id.recView);
         int size = parent.getMeasuredHeight() / MapData.HEIGHT + 1;
         ViewGroup.LayoutParams lp =  itemView.getLayoutParams();
         lp.width = size;
         lp.height = size;
+        //itemView.setLayoutParams(lp);
+
+
+
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.grid4x4,parent,false);
+        MapDataHolder mapDataHolder = new MapDataHolder(view);
 
 
         return mapDataHolder;
