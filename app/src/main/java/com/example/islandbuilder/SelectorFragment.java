@@ -2,7 +2,6 @@ package com.example.islandbuilder;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -10,15 +9,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MapFragment#newInstance} factory method to
+ * Use the {@link SelectorFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MapFragment extends Fragment
-{
+public class SelectorFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,7 +26,7 @@ public class MapFragment extends Fragment
     private String mParam1;
     private String mParam2;
 
-    public MapFragment() {
+    public SelectorFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +36,11 @@ public class MapFragment extends Fragment
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MapFragment.
+     * @return A new instance of fragment SelectorFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static MapFragment newInstance(String param1, String param2) {
-        MapFragment fragment = new MapFragment();
+    public static SelectorFragment newInstance(String param1, String param2) {
+        SelectorFragment fragment = new SelectorFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,15 +60,17 @@ public class MapFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_selector, container, false);
+
+        RecyclerView rv = (RecyclerView) view.findViewById(R.id.selectorRecView);
+        rv.setHasFixedSize(true);
+
+        rv.setLayoutManager(new GridLayoutManager(getActivity(),1,GridLayoutManager.HORIZONTAL,false));
+        SelectorAdapter selectorAdapter = new SelectorAdapter();
+        rv.setAdapter(selectorAdapter);
+
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_map, container, false);
-
-        RecyclerView rv = (RecyclerView) view.findViewById(R.id.recView);
-
-        rv.setLayoutManager(new GridLayoutManager(getActivity(),MapData.HEIGHT,GridLayoutManager.HORIZONTAL,false));
-        MapAdapter mapAdapter = new MapAdapter(MapData.get());
-        rv.setAdapter(mapAdapter);
-
         return view;
     }
 }

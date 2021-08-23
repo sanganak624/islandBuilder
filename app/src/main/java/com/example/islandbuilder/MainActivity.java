@@ -21,11 +21,17 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         MapFragment mapFrag = (MapFragment) fm.findFragmentById(R.id.mapFragment);
+        SelectorFragment selFrag = (SelectorFragment)  fm.findFragmentById(R.id.selectorFragment);
 
         if(mapFrag==null)
         {
             mapFrag = new MapFragment();
             fm.beginTransaction().add(R.id.mapFragment,mapFrag).commit();
+        }
+        if(selFrag ==null)
+        {
+            selFrag = new SelectorFragment();
+            fm.beginTransaction().add(R.id.selectorFragment,selFrag).commit();
         }
     }
 }

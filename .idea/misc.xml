@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/drawable/ic_tree1.xml" value="0.36153846153846153" />
+        <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/drawable/ic_tree4.xml" value="0.36153846153846153" />
+        <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/layout/activity_main.xml" value="0.31476449275362317" />
         <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/layout/fragment_map.xml" value="0.3482789855072464" />
+        <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/layout/fragment_selector.xml" value="0.3482789855072464" />
         <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/layout/grid4x4.xml" value="0.25" />
         <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/layout/layout.xml" value="0.31476449275362317" />
         <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/layout/layout2.xml" value="0.31476449275362317" />
+        <entry key="..\:/Users/Sang/AndroidStudioProjects/islandBuilder/app/src/main/res/layout/selector.xml" value="0.33697916666666666" />
         <entry key="..\:/Users/sanga/StudioProjects/islandBuilder/app/src/main/res/drawable/ic_building1.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/sanga/StudioProjects/islandBuilder/app/src/main/res/drawable/ic_coast_north.xml" value="0.24114583333333334" />
         <entry key="..\:/Users/sanga/StudioProjects/islandBuilder/app/src/main/res/drawable/ic_coast_northeast.xml" value="0.24114583333333334" />
