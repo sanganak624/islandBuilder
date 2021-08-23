@@ -1,9 +1,11 @@
 package com.example.islandbuilder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.text.Layout;
 import android.view.View;
@@ -17,10 +19,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //mapData.regenerate();
 
-        RecyclerView rv = (RecyclerView) findViewById(R.id.recView);
+        FragmentManager fm = getSupportFragmentManager();
+        MapFragment mapFrag = (MapFragment) fm.findFragmentById(R.id.mapFragment);
 
-        rv.setLayoutManager(new GridLayoutManager(this,MapData.HEIGHT,GridLayoutManager.HORIZONTAL,false));
-        MapAdapter mapAdapter = new MapAdapter(mapData);
-        rv.setAdapter(mapAdapter);
+        if(mapFrag==null)
+        {
+            mapFrag = new MapFragment();
+            fm.beginTransaction().add(R.id.mapFragment,mapFrag).commit();
+        }
     }
 }

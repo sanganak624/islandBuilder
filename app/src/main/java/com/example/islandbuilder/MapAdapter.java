@@ -20,15 +20,7 @@ public class MapAdapter extends RecyclerView.Adapter<MapDataHolder> {
     @Override
     public MapDataHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        RecyclerView itemView = parent.findViewById(R.id.recView);
-            int size = parent.getMeasuredHeight() / MapData.HEIGHT + 1;
-            ViewGroup.LayoutParams lp =  itemView.getLayoutParams();
-            lp.width = size;
-            lp.height = size;
-        //itemView.setLayoutParams(lp);
-
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        //View view = layoutInflater.inflate(R.layout.grid4x4,parent,false);
         MapDataHolder mapDataHolder = new MapDataHolder(layoutInflater,parent);
 
         return mapDataHolder;
@@ -36,22 +28,15 @@ public class MapAdapter extends RecyclerView.Adapter<MapDataHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MapDataHolder holder, int position) {
-        for(int i=0; i<MapData.HEIGHT; i++)
-        {
-            MapElement element = gamedata.get(i,position);
-            holder.northeast.setImageResource(element.getNorthEast());
-            holder.northwest.setImageResource(element.getNorthWest());
-            holder.southwest.setImageResource(element.getSouthWest());
-            holder.southeast.setImageResource(element.getSouthEast());
-            /*holder.northeast.setImageResource(R.drawable.ic_coast_north);
-            holder.northwest.setImageResource(R.drawable.ic_coast_north);
-            holder.southwest.setImageResource(R.drawable.ic_coast_north);
-            holder.southeast.setImageResource(R.drawable.ic_coast_north);*/
-        }
+
+        int row = position % MapData.HEIGHT;
+        int col = position / MapData.HEIGHT;
+
+        holder.bind(gamedata.get(row,col));
     }
 
     @Override
     public int getItemCount() {
-        return MapData.WIDTH ;
+        return MapData.WIDTH*MapData.HEIGHT;
     }
 }

@@ -24,8 +24,7 @@ public class MapDataHolder extends RecyclerView.ViewHolder {
     }
 
     public MapDataHolder(LayoutInflater li, ViewGroup parent) {
-        super( li.inflate(R.layout.grid4x4,
-                parent, false) );
+        super(li.inflate(R.layout.grid4x4, parent, false));
 
         int size = parent.getMeasuredHeight() / MapData.HEIGHT + 1;
         ViewGroup.LayoutParams lp =  itemView.getLayoutParams();
@@ -38,5 +37,18 @@ public class MapDataHolder extends RecyclerView.ViewHolder {
         southeast = itemView.findViewById(R.id.southeast);
     }
 
+    public void bind(MapElement data)
+    {
+        int imageNW = data.getNorthWest();
+        int imageNE = data.getNorthEast();
+        int imageSW = data.getSouthWest();
+        int imageSE = data.getSouthEast();
+
+        northwest.setImageResource(imageNW);
+        northeast.setImageResource(imageNE);
+        southwest.setImageResource(imageSW);
+        southeast.setImageResource(imageSE);
+
+    }
 
 }
