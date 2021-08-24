@@ -11,14 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 public class SelectorDataHolder extends RecyclerView.ViewHolder{
 
     ImageView structure;
+    private int pos;
 
     public SelectorDataHolder(LayoutInflater li, ViewGroup parent) {
         super(li.inflate(R.layout.selector, parent, false));
 
-        int size = parent.getMeasuredHeight() +250;
+        //int size = (int) (parent.getMeasuredHeight()*0.2);
         ViewGroup.LayoutParams lp =  itemView.getLayoutParams();
-        lp.width = 100;
-        lp.height = 100;
+        lp.width = 150;
+        lp.height = 150;
 
         structure = itemView.findViewById(R.id.structure);
     }
@@ -26,5 +27,16 @@ public class SelectorDataHolder extends RecyclerView.ViewHolder{
     public void bind(Structure data)
     {
         structure.setImageResource(data.getDrawableId());
+    }
+
+    public int getSelected(SelectorDataHolder holder)
+    {
+        structure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pos = holder.getAdapterPosition();
+            }
+        });
+        return pos;
     }
 }

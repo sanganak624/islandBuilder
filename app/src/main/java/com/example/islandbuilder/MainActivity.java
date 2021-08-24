@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         if(selFrag ==null)
         {
             selFrag = new SelectorFragment();
+
             fm.beginTransaction().add(R.id.selectorFragment,selFrag).commit();
         }
     }

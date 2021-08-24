@@ -18,15 +18,6 @@ public class MapDataHolder extends RecyclerView.ViewHolder {
     ImageView southwest;
     ImageView southeast;
 
-//    public MapDataHolder(@NonNull View itemView) {
-//        super(itemView);
-//
-//        northwest = itemView.findViewById(R.id.northwest);
-//        northeast = itemView.findViewById(R.id.northeast);
-//        southwest = itemView.findViewById(R.id.southwest);
-//        southeast = itemView.findViewById(R.id.southeast);
-//    }
-
     public MapDataHolder(LayoutInflater li, ViewGroup parent) {
         super(li.inflate(R.layout.grid4x4, parent, false));
 
