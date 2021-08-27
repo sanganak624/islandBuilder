@@ -33,7 +33,7 @@ public class MapAdapter extends RecyclerView.Adapter<MapDataHolder> {
         int row = position % MapData.HEIGHT;
         int col = position / MapData.HEIGHT;
 
-        holder.bind(gamedata.get(row,col));
+        holder.bind(gamedata.get(row,col),row,col);
     }
 
     @Override

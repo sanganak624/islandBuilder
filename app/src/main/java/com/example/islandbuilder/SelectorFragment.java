@@ -67,7 +67,7 @@ public class SelectorFragment extends Fragment {
         rv.setHasFixedSize(true);
 
         rv.setLayoutManager(new GridLayoutManager(getActivity(),1,GridLayoutManager.HORIZONTAL,false));
-        SelectorAdapter selectorAdapter = new SelectorAdapter();
+        SelectorAdapter selectorAdapter = new SelectorAdapter(rv);
         rv.setAdapter(selectorAdapter);
 
         // Inflate the layout for this fragment

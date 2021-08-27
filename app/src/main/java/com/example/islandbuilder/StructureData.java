@@ -52,6 +52,9 @@ public class StructureData
 
     private static StructureData instance = null;
 
+    private Structure isSelected;
+    private int selectedPos;
+
     public static StructureData get()
     {
         if(instance == null)
@@ -81,5 +84,25 @@ public class StructureData
     public void remove(int i)
     {
         structureList.remove(i);
+    }
+
+    public Structure getSelected ()
+    {
+        return isSelected;
+    }
+
+    public void setIsSelected(Structure selected)
+    {
+        this.isSelected = selected;
+    }
+
+    public int getSelectedPos()
+    {
+        return selectedPos;
+    }
+
+    public void setSelectedPos(int pos)
+    {
+        selectedPos = pos;
     }
 }
